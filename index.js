@@ -16,8 +16,12 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
  const corsOptions = {
-    Credential:true,
-    origin: 'https://musiacartfront.onrender.com/', 
+   
+    origin: 'https://musiacartfront.onrender.com', 
+    credentials:true;
+  
+  };
+  app.use(cors(corsOptions));
   
   };
   app.use(cors(corsOptions));
