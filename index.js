@@ -14,16 +14,13 @@ dotenv.config();
 app.use(express.json());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-const corsOptions = {
-    Credential:true,
-    origin: 'http://localhost:3000', 
-  
-  };
-  app.use(cors(corsOptions));
+
+  app.use(cors);
 
 
 
 app.get("/", (req, res) => {
+    res.setHeader("Access-Control-Allow-Credentials","true");
   res.json({
     message: "Success is the only option",
   });
