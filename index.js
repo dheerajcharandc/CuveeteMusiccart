@@ -16,6 +16,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 const corsOptions = {
     credentials: true,
+    origin:"http://localhost:3000/"
   };
   app.use(cors(corsOptions));
 
@@ -54,8 +55,9 @@ app.use((err, req, res, next) => {
   });
 });
 
+const port = process.env.PORT ;
 // *** Connection with Database ***
-app.listen(process.env.PORT, () => {
+app.listen(port, () => {
   mongoose
     .connect(process.env.MONGO_URL)
     .then(() => {
