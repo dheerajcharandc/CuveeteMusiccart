@@ -23,6 +23,7 @@ const corsOptions = {
 
 
 app.get("/", (req, res) => {
+  res.setHeader("Access-Control-Allow-Credentials","true");
   res.json({
     message: "Success is the only option",
   });
