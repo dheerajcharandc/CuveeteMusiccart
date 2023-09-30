@@ -16,8 +16,6 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 const corsOptions = {
     credentials: true,
-    origin: 'https://651876da83a64051266758f7--inquisitive-sable-6343a3.netlify.app/', 
-  
   };
   app.use(cors(corsOptions));
 
